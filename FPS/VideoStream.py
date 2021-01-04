@@ -1,26 +1,26 @@
 # import the necessary packages
 from webcamvideostream import WebcamVideoStream
  
-class VideoStream:
-def __init__(self, src=0, usePiCamera=False, resolution=(1280, 720),
-    framerate=62):
-    # check to see if the picamera module should be used
-    if usePiCamera:
-        # only import the picamera packages unless we are
-        # explicity told to do so -- this helps remove the
-        # requirement of `picamera[array]` from desktops or
-        # laptops that still want to use the `imutils` package
-        from pivideostream import PiVideoStream
-
-        # initialize the picamera stream and allow the camera
-        # sensor to warmup
-        self.stream = PiVideoStream(resolution=resolution, framerate=framerate)
-
-    # otherwise, we are using OpenCV so initialize the webcam
-    # stream
-    else:
-        self.stream = WebcamVideoStream(src=src)
-
+##class VideoStream:
+##def __init__(self, src=0, usePiCamera=False, resolution=(1280, 720),
+##    framerate=62):
+##    # check to see if the picamera module should be used
+##    if usePiCamera:
+##        # only import the picamera packages unless we are
+##        # explicity told to do so -- this helps remove the
+##        # requirement of `picamera[array]` from desktops or
+##        # laptops that still want to use the `imutils` package
+##        from camera import VideoCamera
+##
+##        # initialize the picamera stream and allow the camera
+##        # sensor to warmup
+##        self.stream = VideoCamera()
+##
+##    # otherwise, we are using OpenCV so initialize the webcam
+##    # stream
+##    else:
+##        self.stream = WebcamVideoStream(src=src)
+##
 
 def start(self):
     # start the threaded video stream
